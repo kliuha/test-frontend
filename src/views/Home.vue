@@ -58,14 +58,14 @@ export default {
       await this['loadPostsData']();
     },
     initPage: function() {
-			this.listCount = this['postsData'].length;
-			if (this.listCount < this.pageSize) {
-				this.historyList = this['postsData'];
-			} else {
-				this.historyList = this['postsData'].slice(0, this.pageSize);
-			}
-		},
-		updatePage: function(pageIndex) {
+      this.listCount = this['postsData'].length;
+      if (this.listCount < this.pageSize) {
+        this.historyList = this['postsData'];
+      } else {
+        this.historyList = this['postsData'].slice(0, this.pageSize);
+      }
+    },
+    updatePage: function(pageIndex) {
       let start = (pageIndex - 1) * this.pageSize;
       let end = pageIndex * this.pageSize;
       this.historyList = this['postsData'].slice(start, end);
