@@ -32,7 +32,7 @@ export const appModule = {
         },
         [constants.CHANGE_POST_BODY]: (state, payload) => {
             const post = state.posts.find((post) => post.id===payload.id);
-            post.text = payload.body;
+            post.body = payload.body;
         }
     }
 }
