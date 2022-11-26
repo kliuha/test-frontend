@@ -66,10 +66,10 @@ export default {
 			}
 		},
 		updatePage: function(pageIndex) {
-			let start = (pageIndex - 1) * this.pageSize;
-			let end = pageIndex * this.pageSize;
-			this.historyList = this['postsData'].slice(start, end);
-			this.page = pageIndex;
+      let start = (pageIndex - 1) * this.pageSize;
+      let end = pageIndex * this.pageSize;
+      this.historyList = this['postsData'].slice(start, end);
+      this.page = pageIndex;
       window.scrollTo(0,0)
 		},
     async doDeletePost(id) {
