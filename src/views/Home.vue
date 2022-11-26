@@ -70,6 +70,7 @@ export default {
 			let end = pageIndex * this.pageSize;
 			this.historyList = this['postsData'].slice(start, end);
 			this.page = pageIndex;
+      window.scrollTo(0,0)
 		},
     async doDeletePost(id) {
       await this['deletePost'](id);
