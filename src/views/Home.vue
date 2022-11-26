@@ -30,22 +30,22 @@ export default {
   data () {
     return {
       listCount: 0,
-			historyList: [],
+      historyList: [],
       page: 1,
-			pageSize: 6
+      pageSize: 6
     }
   },
   computed: {
     ...mapGetters('appModule',['postsData']),
     pages() {
-			if (this.pageSize == null || this.listCount == null) return 0;
-			return Math.ceil(this.listCount / this.pageSize);
-		}
+    if (this.pageSize == null || this.listCount == null) return 0;
+    return Math.ceil(this.listCount / this.pageSize);
+    }
   },
   async mounted() {
-    await this.fetchData()
-		this.initPage();
-		this.updatePage(this.page);
+    await this.fetchData();
+    this.initPage();
+    this.updatePage(this.page);
   },
   watch: {
     postsData: function() {
@@ -70,8 +70,8 @@ export default {
       let end = pageIndex * this.pageSize;
       this.historyList = this['postsData'].slice(start, end);
       this.page = pageIndex;
-      window.scrollTo(0,0)
-		},
+      window.scrollTo(0,0);
+      },
     async doDeletePost(id) {
       await this['deletePost'](id);
       this.page = 1;
